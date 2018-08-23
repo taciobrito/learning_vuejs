@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Eventos Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+		<a :href="urlLink" @click.prevent="showAlert">{{ textLink }}</a>
+
+		<form action="#" method="post" @submit.prevent="showAlert">
+			<input type="text" placeholder="Nome: ">
+
+			<button type="submit">Enviar</button>
+		</form>
+			<button type="button" @click.once="showAlert">clique-me</button>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				textLink: 'EspecializaTi Academy',
+				urlLink: 'https://academy.especializati.com.br'
+			},
+			methods: {
+				showAlert(event) {
+					// event.preventDefault();
+
+					alert('clicou no link');
+				}
+			}
+		});
+	</script>
+</body>
+</html>
