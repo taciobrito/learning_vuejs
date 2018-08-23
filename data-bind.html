@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Data Bind Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+		<h1>{{ title }}</h1>
+		<p>{{ description }}</p>
+		<p>{{ isActive ? 'Ativo' : 'Inativo' }}</p>
+		<a :href="url" :title="textGoogle">{{ textGoogle }}</a>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>ssr
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				title: 'Meu Título',
+				description: 'Minha descrição',
+				isActive: true,
+				url: 'https://google.com.br',
+				textGoogle: 'Google',
+			}
+		});
+	</script>
+</body>
+</html>
