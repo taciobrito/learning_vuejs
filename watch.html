@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Eventos modificadores de sistema Vue JS</title>
+	<title>Watch Vue JS</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<div id="app">
-		<div @click.ctrl.exact="testEvent">
-			Clique Aqui!!!
-		</div>
+		<button @click="count++">Aumentar</button>
+		<button @click="count--">Diminuir</button>
+		<p>{{ count }}</p>
 	</div>
 
 	<!-- development version, includes helpful console warnings -->
@@ -19,11 +19,17 @@
 		new Vue({
 			el: '#app',
 			data: {
-
+				count: 0	
 			},
 			methods: {
-				testEvent() {
-					alert('Test');
+
+			},
+			watch: {
+				count: function (value) {
+					var vm = this;
+					setTimeout(function() {
+						vm.count = 0;
+					},3000);
 				}
 			}
 		});

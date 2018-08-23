@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>V For Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		.active {
+			background: #0f0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="item in 10">{{ item }}</li>
+		</ul>
+		
+		<hr>
+		<ul>
+			<li v-for="product in products">{{ product }}</li>
+		</ul>
+
+		<hr>
+		<ul>
+			<li v-for="(task, index) in tasks" :class="{active : task.isActive}">
+				{{ index +' -> '+ task.id +' - '+ task.name }}
+			</li>
+		</ul>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				products: [
+					'TV', 'Geladeira', 'Microondas', 'Rádio'
+				],
+				tasks: [
+					{ id: 1, name: 'Lavar Louça', isActive: false },
+					{ id: 2, name: 'Lavar Carro', isActive: false },
+					{ id: 3, name: 'Lavar Moto', isActive: true },
+					{ id: 4, name: 'Lavar Banheiro', isActive: false },
+				]
+			},
+			methods: {
+
+			},
+		});
+	</script>
+</body>
+</html>

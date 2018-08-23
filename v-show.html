@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Eventos modificadores de sistema Vue JS</title>
+	<title>V Show Vue JS</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
+
 <body>
 	<div id="app">
-		<div @click.ctrl.exact="testEvent">
-			Clique Aqui!!!
+		<div v-if="isActive">
+			V-IF
 		</div>
+
+		<div v-show="isActive">
+			V-Show
+		</div>
+		
+
 	</div>
 
 	<!-- development version, includes helpful console warnings -->
@@ -19,13 +27,11 @@
 		new Vue({
 			el: '#app',
 			data: {
-
+				isActive: false
 			},
 			methods: {
-				testEvent() {
-					alert('Test');
-				}
-			}
+
+			},
 		});
 	</script>
 </body>

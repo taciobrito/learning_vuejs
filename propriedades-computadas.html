@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Propriedades computadas Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+		<button @click="count++">Incrementar</button>
+		<button @click="count--">Decrementar</button>
+	<p>{{ count }} | {{ countComputed }} | {{ countMethod }}</p>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				count: 0
+			},
+			computed: {
+				countComputed: function () {
+					return (this.count >= 5) ? 'Maior que 5' : 'Menos que 5'
+				}
+			},
+			methods: {
+				countMethod: function () {
+					return (this.count >= 5) ? 'Maior que 5' : 'Menos que 5'
+				}
+			}
+		});
+	</script>
+</body>
+</html>
