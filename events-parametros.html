@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Eventos Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+		<input type="text" @keyup="changeInput">
+	
+		<button @click="changeInputTwo(2)">Incrementar 2</button>
+		<input type="number" @keyup="changeInputThree(2, $event)">
+		{{ count }}
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				count: 0
+			},
+			methods: {
+				changeInput: function (event) {
+					console.log(event.target.value)
+				},
+				changeInputTwo: function (value) {
+					this.count += value
+				},
+				changeInputThree (value, event) {
+					this.count += parseInt(event.target.value)
+					this.count += value
+				}
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>V-Html Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+		<h1>{{ title }}</h1>
+
+		<div v-html="description"></div>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				title: 'Tutorial Vue JS',
+				description: '<strong>Conteúdo do artigo</strong>'
+			}
+		});
+	</script>
+</body>
+</html>

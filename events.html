@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Eventos Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app">
+	<input type="text" @keyup="count++">
+
+	<hr>
+	<button @click="count++">Incrementar</button>
+	{{ count }}
+	<button @click="count--">Decrementar</button>
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				count: 0
+			}
+		});
+	</script>
+</body>
+</html>
