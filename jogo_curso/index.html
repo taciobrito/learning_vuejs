@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Jogo 21 Vue JS</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	</head>
+	<body>
+
+		<div class="container text-center" id="app">
+			<h1 class="title">Jogo 21 com Vue JS</h1>
+
+			<div class="row">
+				<div :class="['col-6', playerSelected == 1 ? 'active' : '']">
+					<img src="assets/img/player1.png" alt="Jogador 1">
+					<p>Player 1</p>
+					<p><strong>Pontos: </strong>{{ playerOne.points }}</p>
+				</div>
+
+				<div :class="['col-6', playerSelected == 2 ? 'active' : '']">
+					<img src="assets/img/player2.png" alt="Jogador 2">
+					<p>Player 2</p>
+					<p><strong>Pontos: </strong>{{ playerTwo.points }}</p>
+				</div>
+
+				<div class="controls col">
+					<a href="#" class="btn btn-success" @click.prevent="changePlayer">Pular</a>
+					<a href="#" class="btn btn-primary">Finalizar Jogo</a>
+					<a href="#" class="btn btn-danger">Resetar</a>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div class="col-6">
+					<a href="#" @click.prevent="selectedCart">
+						<img src="assets/img/baralho-cartas.png" alt="Baralho" class="carts">
+					</a>
+				</div>
+
+				<div class="col-6">
+					<div v-if="cartSelected != ''">
+						<img :src="'assets/img/carts/'+ cartSelected +'.png'" alt="Baralho" class="cart">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/script.js"></script>
+
+	</body>
+</html>
