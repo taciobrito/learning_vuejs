@@ -18,20 +18,26 @@
 			<div class="row">
 				<div :class="['col-6', playerSelected == 1 ? 'active' : '']">
 					<img src="assets/img/player1.png" alt="Jogador 1">
-					<p>Player 1</p>
+					<p>
+						Player 1
+						<span class="badge badge-default">{{ numberHistoryPlayerOne }}</span>
+					</p>
 					<p><strong>Pontos: </strong>{{ playerOne.points }}</p>
 				</div>
 
 				<div :class="['col-6', playerSelected == 2 ? 'active' : '']">
 					<img src="assets/img/player2.png" alt="Jogador 2">
-					<p>Player 2</p>
+					<p>
+						Player 2
+						<span class="badge badge-default">{{ numberHistoryPlayerTwo }}</span>
+					</p>
 					<p><strong>Pontos: </strong>{{ playerTwo.points }}</p>
 				</div>
 
 				<div class="controls col">
 					<a href="#" class="btn btn-success" @click.prevent="changePlayer">Pular</a>
-					<a href="#" class="btn btn-primary">Finalizar Jogo</a>
-					<a href="#" class="btn btn-danger">Resetar</a>
+					<a href="#" class="btn btn-primary" @click.prevent="finishGame">Finalizar Jogo</a>
+					<a href="#" class="btn btn-danger" @click.prevent="resetGame">Resetar</a>
 				</div>
 			</div>
 
