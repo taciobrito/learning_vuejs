@@ -1,5 +1,5 @@
 {
-  "name": "tasks",
+  "name": "routes",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "Tácio Brito <tacio.7brito@gmail.com>",
@@ -10,7 +10,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.11"
   },
   "browserslist": [
